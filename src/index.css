@@ -1,3 +1,17 @@
+:root {
+  --clr-primary-300: #d5d4d4;
+  --clr-primary-700: #fff;
+  --clr-secondary-300: rgb(0 0 0 / 30%);
+  --clr-secondary-700: #333;
+
+  --font-xlarge: 4.375rem;
+  --font-medium: 1.125rem;
+  --font-small: 0.875rem;
+  --font-xsmall: 0.75rem;
+
+  --px-small: 1.25rem;
+} 
+
 *,
 *::before,
 *::after {
@@ -27,6 +41,8 @@ body {
 body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-family: 'Roboto', Arial !important;
+  background: var(--clr-primary-300);
 }
 
 a:not([class]) {
