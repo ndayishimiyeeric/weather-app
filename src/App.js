@@ -11,7 +11,6 @@ function App() {
   const dispatch = useDispatch();
   const handleChange = (searchData) => {
     setData(searchData);
-    console.log(searchData);
   };
 
   useEffect(() => {
@@ -21,7 +20,6 @@ function App() {
   }, [Data, dispatch]);
 
   const weather = useSelector((state) => state.weather);
-  console.log(weather);
 
   return (
     <div className="container">
