@@ -6,7 +6,9 @@ import CurrentWeather from './components/CurrentWeather/CurrentWeather';
 import Forecast from './components/Forecast/Forecast';
 
 function App() {
-  const [Data, setData] = useState(null);
+  const [Data, setData] = useState(
+    JSON.parse(localStorage.getItem('search')) || null
+  );
   const dispatch = useDispatch();
   const handleChange = (searchData) => {
     setData(searchData);

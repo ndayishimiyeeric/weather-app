@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AsyncPaginate } from 'react-select-async-paginate';
 import PropTypes from 'prop-types';
 import { GEO_API_URL, Geoptions } from '../../Api';
@@ -29,6 +29,12 @@ function Search(props) {
     setSearch(searchData);
     onSearch(searchData);
   };
+
+  useEffect(() => {
+    if (search) {
+      localStorage.setItem('search', JSON.stringify(search));
+    }
+  }, [search]);
 
   return (
     <AsyncPaginate
