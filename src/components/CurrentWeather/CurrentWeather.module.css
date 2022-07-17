@@ -62,3 +62,13 @@
   font-size: var(--font-xsmall);
   text-align: right;
 }
+
+@media only screen and (max-width: 480px) {
+  .weatherIcon {
+    width: 4.375rem;
+  }
+
+  .temperature {
+    font-size: var(--font-leader);
+  }
+}

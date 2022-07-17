@@ -22,10 +22,9 @@ function Forecast(props) {
   const forcastDays = WEEK_DAYS.slice(currentDay, WEEK_DAYS.length).concat(
     WEEK_DAYS.slice(0, currentDay)
   );
-  console.log(forcastDays);
   return (
     <>
-      <label className={styles.title}>Daily</label>
+      <div className={styles.title}>Daily</div>
       <Accordion allowZeroExpanded>
         {data.list.slice(0, 6).map((item, index) => (
           <AccordionItem key={index}>

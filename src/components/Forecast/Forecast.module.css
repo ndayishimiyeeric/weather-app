@@ -1,6 +1,8 @@
 .title {
   font-size: var(--font-large);
   font-weight: 700;
+  margin: var(--px-small) 20px;
+  text-align: center;
 }
 
 .dailyItem {
@@ -60,18 +62,14 @@
   color: var(--clr-secondary-400);
 }
 
-@media only screen and (min-width: 769px) {
-
-}
-
 @media only screen and (max-width: 768px) {
+  .title {
+    text-align: center;
+  }
   .dailyItem{
     justify-content: space-between;
   }
   .description {
-    display: none;
-  }
-  .minMax {
     display: none;
   }
   .dailyDetailsGrid {

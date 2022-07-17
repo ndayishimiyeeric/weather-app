@@ -4,7 +4,6 @@ import { fetchWeather } from './redux/Weather/Weather';
 import Search from './components/search/Search';
 import CurrentWeather from './components/CurrentWeather/CurrentWeather';
 import Forecast from './components/Forecast/Forecast';
-import './App.css';
 
 function App() {
   const [Data, setData] = useState(null);
