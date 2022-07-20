@@ -80,3 +80,10 @@ svg {
   max-width: 1080px;
   margin: 20px auto;
 }
+
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 1080px;
+    margin: 20px;
+  }
+}
