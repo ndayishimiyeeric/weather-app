@@ -1,33 +1,30 @@
 import { useState, useEffect } from 'react';
-import { AsyncPaginate } from 'react-select-async-paginate';
+import { useSelector, useDispatch } from 'react-redux';
+import Select from 'react-select';
 import PropTypes from 'prop-types';
-import { GEO_API_URL, Geoptions } from '../../Api';
+import { CgAdd } from 'react-icons/cg';
+import { fetchCities } from '../../redux/Cities/Cities';
+import styles from './Search.module.css';
 
 function Search(props) {
   const { onSearch } = props;
   const [search, setSearch] = useState(null);
+  const [inputData, setInputData] = useState('');
 
-  const loadOptions = (inputValue) => {
-    return fetch(
-      `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
-      Geoptions
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        return {
-          options: response.data.map((city) => {
-            return {
-              value: `${city.latitude} ${city.longitude}`,
-              label: `${city.name}, ${city.countryCode}`,
-            };
-          }),
-        };
-      });
-  };
+  const dispatch = useDispatch();
+  const { cities } = useSelector((state) => state.cities);
 
   const handleOnChange = (searchData) => {
     setSearch(searchData);
     onSearch(searchData);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (inputData.trim()) {
+      dispatch(fetchCities(inputData));
+      setInputData('');
+    }
   };
 
   useEffect(() => {
@@ -37,13 +34,29 @@ function Search(props) {
   }, [search]);
 
   return (
-    <AsyncPaginate
-      placeholder="Search for a city..."
-      debounceTimeout={6000}
-      value={search}
-      onChange={handleOnChange}
-      loadOptions={loadOptions}
-    />
+    <>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          maxLength={3}
+          className={styles.input}
+          placeholder="Add your city prefix like 'Ki' with no space"
+          value={inputData}
+          onChange={(e) => setInputData(e.target.value)}
+        />
+        <button type="submit" className={styles.button}>
+          <CgAdd />
+        </button>
+      </form>
+
+      <Select
+        placeholder="Select a city..."
+        onChange={handleOnChange}
+        value={search}
+        options={cities}
+        className={styles.select}
+      />
+    </>
   );
 }
 

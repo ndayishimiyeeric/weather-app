@@ -1,0 +1,36 @@
+form {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 95%;
+  outline: none;
+  border: 1px solid #ccc;
+  border-right: none;
+  padding: 0.3rem 0.7rem;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  font-size: 1rem;
+}
+
+.button {
+  width: 54px;
+  outline: none;
+  padding: 0.3rem 0.7rem;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid #ccc;
+  border-left: none;
+  background-color: #fff;
+  color: #5691c8;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
