@@ -1,6 +1,8 @@
 # weather App
 
-> This is a weather App where you can get latest Weather information in different cities around the world.
+> This is a weather App where you can get latest Weather information in different cities around the world
+
+![view](https://user-images.githubusercontent.com/82580160/179979309-7db75374-e8dc-472d-a66c-e98eba6acba0.png)
 
 ## Features
 
@@ -11,7 +13,7 @@
 
 ## Demo App
 
-Not Published Yet []()
+See [Weather-app](https://nderic-weather-app.netlify.app/)
 
 ## Built With
 
